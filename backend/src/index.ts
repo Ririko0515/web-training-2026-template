@@ -9,6 +9,7 @@ app.use("*", logger());
 app.use("*", cors());
 
 /* ここに追記 */
+app.get("/health", (c) => c.json({ status: "ok", message: "Hello, World!" }));
 
 const port = Number(process.env.PORT ?? 3000);
 
